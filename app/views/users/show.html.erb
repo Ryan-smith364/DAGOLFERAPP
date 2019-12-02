@@ -11,5 +11,8 @@
         Course: <%= review.course.name%><br>
         Stars: <%=review.rating%><br>
         Thoughts: <%= review.review_text%><br><br>
-    <%end%>
+    <%end%><br>
+    <%= link_to "Users Index", users_path%>
+    <%= link_to "Edit", edit_user_path(@user)%>
+    <%= button_to "delete", user_path(@user), method: :delete%>
 

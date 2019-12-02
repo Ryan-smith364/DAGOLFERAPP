@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
    
-    before_action :get_user ,only:[:show]
+    before_action :get_user ,only:[:show, :edit, :update, :destroy]
 
     def index
         @users = User.all
@@ -11,14 +11,27 @@ class UsersController < ApplicationController
     end
 
     def create
-        
+        @user = User.create(strong_params)
+        redirect_to user_path(@user)
     end
 
+    def edit
+
+    end
+
+    def update
+        @user.update(strong_params)
+        redirect_to user_path(@user)
+    end
 
     def show
 
     end 
     
+    def destroy
+        @user.delete
+        redirect_to users_path
+    end
 
     private 
 
@@ -28,7 +41,7 @@ class UsersController < ApplicationController
      end 
 
      def strong_params
-        params.require(:user).permit(:name,:handicapp) 
+        params.require(:user).permit(:name,:handicap) 
      end 
     
 

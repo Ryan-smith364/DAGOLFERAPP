@@ -1,0 +1,20 @@
+<h1> <%= @course.name%></h1>
+
+<h3>Par: <%= @course.par%></h3>
+<pre>Description: <%= @course.description%> </pre><br>
+
+<h3> Reviews:</h3>
+
+    <div>
+        <% if @course.reviews == []%>
+            <%= "No Reviews Found" %>
+        <%end%>
+
+        <% @course.reviews.each do |review|%>
+        
+            User: <%= review.user.name%><br>
+            Stars: <%=review.rating%><br>
+            Thoughts: <%= review.review_text%><br><br>
+        <%end%><br>
+    </div>
+  <%= link_to "Course List", courses_path%>

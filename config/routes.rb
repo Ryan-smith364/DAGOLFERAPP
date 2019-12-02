@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :reviews
-  resources :courses
+  resources :reviews, except: [:index]
+  resources :courses, only:[:index, :show]
   resources :users
 end
