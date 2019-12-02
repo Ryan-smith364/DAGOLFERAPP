@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
     end 
 
     def new
-        @review = Review.new
+        @review = Review.new()
     end 
 
     def create
@@ -22,7 +22,7 @@ class ReviewsController < ApplicationController
     end 
 
     def strong_params
-        params.require(:review).permit(:user ,:course,:review_text,:rating)
+        params.require(:review).permit(:user_id ,:course_id,:review_text,:rating)
     end 
 
 
