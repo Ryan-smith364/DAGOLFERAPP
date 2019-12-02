@@ -1,0 +1,15 @@
+<h1> See Details  for <%= @user.name %> | <%= @user.handicap %> </h1> 
+
+<h3> Reviews: </h3>
+
+    <% if @user.reviews == []%>
+        <%= "No Reviews Found" %>
+    <%end%>
+
+    <% @user.reviews.each do |review|%>
+       
+        Course: <%= review.course.name%><br>
+        Stars: <%=review.rating%><br>
+        Thoughts: <%= review.review_text%><br><br>
+    <%end%>
+
