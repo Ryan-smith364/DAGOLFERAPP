@@ -1,3 +1,13 @@
 <h1> Here is the show page </h1> 
 
+
+
+<h1> <%= @review.course.name%> Review%></h1>
+<h2> <%= @review.rating%></h2>
+<p><%= @review.review_text%></p>
+
+
+<%=link_to "edit", edit_review_path%>
 <%=link_to @review.course.name, course_path(@review.course)%>
+
+    <%= button_to "delete", review_path(@review), method: :delete%>

@@ -10,10 +10,10 @@
         <% if @course.reviews == []%>
             <%= "No Reviews Found" %><br>
         <%end%>
-    <%= link_to "Write review", new_review_path%><br><br>
+    
         <% @course.reviews.each do |review|%>
         
-            User: <%= review.user.name%><br>
+            User: <%=link_to review.user.name, user_path(review.user)%><br>
             Stars: <%=review.rating%><br>
             Thoughts: <%= review.review_text%><br><br>
         <%end%><br>

@@ -88,7 +88,7 @@ for a tour of “Amen Corner”, possibly the most famous series of holes from T
         Course.create(
             location_id: location_list.sample,
             par: rand(74..80),
-            description: Faker::Lorem.paragraph(sentence_count: rand(7..20)),
+            description: Faker::Lorem.paragraph(sentence_count: rand(20..40)),
             name: Faker::Company.name 
         )
     end
