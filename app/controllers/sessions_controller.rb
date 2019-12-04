@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
         user = User.find_by(name:username)
         if user 
             session["username"] = user.name 
+            session["userid"] = user.id 
             redirect_to locations_path
         else 
             flash["error"] = "Incorrect username or password"
