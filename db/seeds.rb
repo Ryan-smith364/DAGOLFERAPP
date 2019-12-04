@@ -15,8 +15,18 @@ fl = Location.create(name: "Flordia")
 ga = Location.create(name: "Georgia")
 md = Location.create(name: "Maryland")
 me = Location.create(name: " Maine")
-
-
+# fl = Location.create(name: "Flordia")
+# ga = Location.create(name: "Georgia")
+# md = Location.create(name: "Maryland")
+# me = Location.create(name: " Maine")
+# fl = Location.create(name: "Flordia")
+# ga = Location.create(name: "Georgia")
+# md = Location.create(name: "Maryland")
+# me = Location.create(name: " Maine")
+# fl = Location.create(name: "Flordia")
+# ga = Location.create(name: "Georgia")
+# md = Location.create(name: "Maryland")
+# me = Location.create(name: " Maine")
 
 # fl
 
@@ -24,7 +34,7 @@ course7 = Course.create(location_id: fl.id, par: 72, name:"Crescent Oaks", descr
 Steve Smyers with the technical expertise of Jim Colbert. The well-bunkered, traditional-style course is carved from
 scenic woodlands, gently rolling hills and picturesque lakes.")
 course8 = Course.create(location_id: fl.id, par: 72, name:"North Shore", description:"This Mike Dasher layout features the “Modern” nine which is reminiscent of links-style golf and winds through
- native wetlands. The “Classic” nine is carved through a century-old oak grove creating a Carolina feel and an enjoyably
+native wetlands. The “Classic” nine is carved through a century-old oak grove creating a Carolina feel and an enjoyably
 unique setting for your finishing holes. North Shore is a magnificent 18 hole, par 72 golf course in Orlando, FL with 
 4 sets of tees, for recreational and novice golfers while advanced players can test their skills on 6900 yards of challenging golf.")
 course9 = Course.create(location_id: fl.id, par: 72, name:"Cypress Creek", description:"Designed by Dean Refram and Steven R. Smyers, ASGCA, Cypress Creek Golf Club opened in 1989. Steve Smyers,
@@ -72,15 +82,24 @@ Anne Arundel County, just minutes away from the Capital Beltway and Annapolis. W
 grand slam golf experience. Your day begins with a series of three parkland holes, all replicas of U.S. Open or PGA Championship venues.
 Holes #4 and #5 transport you “across the pond” for a taste of The Open Championship. The next three holes bring you back to America 
 for a tour of “Amen Corner”, possibly the most famous series of holes from The Masters Tournament. And the day is just beginning.")
-
-
-
-
-
-
-user1 = User.create(name: 'Joe', handicap: 12)
-user2 = User.create(name: 'Rebecca', handicap: 23)
-user3 = User.create(name: 'Steven', handicap: 32)
+    
+    location_list = [fl.id, ga.id, md.id, me.id]
+    300.times do
+        Course.create(
+            location_id: location_list.sample,
+            par: rand(74..80),
+            description: Faker::Lorem.paragraph,
+            name: Faker::Company.name 
+        )
+    end
+    
+    
+    
+    
+    
+    user1 = User.create(name: 'Joe', handicap: 12)
+    user2 = User.create(name: 'Rebecca', handicap: 23)
+    user3 = User.create(name: 'Steven', handicap: 32)
 user4 = User.create(name: 'Gary', handicap: 35)
 user5 = User.create(name: 'Karen', handicap: 7)
 user6 = User.create(name: 'Frank', handicap: 56)
