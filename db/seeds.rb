@@ -97,9 +97,9 @@ for a tour of “Amen Corner”, possibly the most famous series of holes from T
     
     
     
-    user1 = User.create(name: 'Joe', handicap: 12)
-    user2 = User.create(name: 'Rebecca', handicap: 23)
-    user3 = User.create(name: 'Steven', handicap: 32)
+user1 = User.create(name: 'Joe', handicap: 12)
+user2 = User.create(name: 'Rebecca', handicap: 23)
+user3 = User.create(name: 'Steven', handicap: 32)
 user4 = User.create(name: 'Gary', handicap: 35)
 user5 = User.create(name: 'Karen', handicap: 7)
 user6 = User.create(name: 'Frank', handicap: 56)
