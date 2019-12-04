@@ -11,8 +11,25 @@
         Course: <%= review.course.name%><br>
         Stars: <%=review.rating%><br>
         Thoughts: <%= review.review_text%><br><br>
+        
+        
+            <%= button_to "Edit", edit_review_path%>
+            <%= button_to "delete", review_path(review), method: :delete%>
+        
+
     <%end%><br>
+
+<h3> Bookmarked Courses:</h3>
+
+    <ul>
+        <% @user.user_courses.each do |user_course|%>
+        
+            <li> <%= user_course.course.name%><br></li>
+           
+        <%end%><br>
+    </ul>
+
     <%= link_to "Users Index", users_path%>
     <%= link_to "Edit", edit_user_path(@user)%>
-    <%= button_to "delete", user_path(@user), method: :delete%>
+    <%= button_to "Delete User", user_path(@user), method: :delete%>
 
