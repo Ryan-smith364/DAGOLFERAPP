@@ -1,17 +1,17 @@
-
-
+<h1> Test Form </h1>
 <%= form_for @review do |r|%>
 <%= r.label:user %><br>
 <%= r.collection_select :user_id, User.all , :id , :name %><br>
 
+<%= r.label:course %><br>
+<%= r.collection_select :course_id, Course.all , :id , :name %><br>
+
 <%= r.label:review_text %><br>
 <%= r.text_area:review_text %><br>
-
-<%= r.hidden_field :course_id, value: @course.id%>
 
 <%= r.label:rating %><br>
 <%= r.number_field:rating %><br>
 
 <%= r.submit %>
 <% end %>
-    
+

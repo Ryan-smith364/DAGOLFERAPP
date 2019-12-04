@@ -18,5 +18,9 @@
             Thoughts: <%= review.review_text%><br><br>
         <%end%><br>
     </div>
+
+ <%= render partial: "reviews/review_form" %> 
+
+
 <%= link_to "#{@course.location.name} Courses" , location_path(@course.location)%><br>
 <%= link_to "Course List", courses_path%>

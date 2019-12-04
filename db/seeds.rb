@@ -84,7 +84,7 @@ Holes #4 and #5 transport you “across the pond” for a taste of The Open Cham
 for a tour of “Amen Corner”, possibly the most famous series of holes from The Masters Tournament. And the day is just beginning.")
     
     location_list = [fl.id, ga.id, md.id, me.id]
-    364.times do
+   10.times do
         Course.create(
             location_id: location_list.sample,
             par: rand(74..80),

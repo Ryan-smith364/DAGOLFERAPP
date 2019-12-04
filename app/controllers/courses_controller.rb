@@ -7,5 +7,8 @@ class CoursesController < ApplicationController
 
     def show
         @course = Course.find(params[:id])
+        @review = Review.new(course_id: params[@course])
     end
+
+    
 end

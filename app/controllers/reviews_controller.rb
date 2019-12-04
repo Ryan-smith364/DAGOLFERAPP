@@ -12,8 +12,8 @@ class ReviewsController < ApplicationController
 
     def create
         @review = Review.create(strong_params)
-      
-        redirect_to review_path(@review) 
+        # redirect_to review_path(@review) 
+        redirect_to course_path(@review.course)
     end 
 
 
