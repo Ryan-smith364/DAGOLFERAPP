@@ -1,8 +1,9 @@
 
 
 <%= form_for @review do |r|%>
-<%= r.label:user %><br>
-<%= r.collection_select :user_id, User.all , :id , :name %><br>
+
+
+<%= r.hidden_field :user_id, value: session["userid"]%>
 
 <%= r.label:review_text %><br>
 <%= r.text_area:review_text %><br>
