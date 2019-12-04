@@ -8,14 +8,14 @@
 
     <% @user.reviews.each do |review|%>
        
-        Course: <%= review.course.name%><br>
+        Course: <%=link_to review.course.name, course_path(review.course)%><br>
         Stars: <%=review.rating%><br>
         Thoughts: <%= review.review_text%><br><br>
         
-        
+        <%if session["userid"] == @user.id%> 
             <%= button_to "Edit", edit_review_path%>
             <%= button_to "delete", review_path(review), method: :delete%>
-        
+        <%end%>
 
     <%end%><br>
 
@@ -31,5 +31,6 @@
 
     <%= link_to "Users Index", users_path%>
     <%= link_to "Edit", edit_user_path(@user)%>
-    <%= button_to "Delete User", user_path(@user), method: :delete%>
-
+    <%if session["userid"] == @user.id%> 
+        <%= button_to "Delete User", user_path(@user), method: :delete%>
+    <%end%>

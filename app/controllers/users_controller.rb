@@ -29,8 +29,11 @@ class UsersController < ApplicationController
     end 
     
     def destroy
+        @user.reviews.destroy_all
         @user.delete
-        redirect_to users_path
+        session.clear  
+        # redirect_to users_path
+        redirect_to login_path
     end
 
     private 
