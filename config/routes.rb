@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :user_courses
   resources :locations, only:[:index, :show]
   resources :reviews, except: [:index]
   resources :courses, only:[:index, :show]

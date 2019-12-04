@@ -1,5 +1,5 @@
 <h1> <%= @course.name%></h1>
-
+<h2> <%= @course.location.name%>
 <h3>Par: <%= @course.par%></h3>
 <h5> Description: </h5>
 <p><%= @course.description%> </p><br>
@@ -10,7 +10,7 @@
         <% if @course.reviews == []%>
             <%= "No Reviews Found" %><br>
         <%end%>
-
+    <%= link_to "Write review", new_review_path%><br><br>
         <% @course.reviews.each do |review|%>
         
             User: <%= review.user.name%><br>

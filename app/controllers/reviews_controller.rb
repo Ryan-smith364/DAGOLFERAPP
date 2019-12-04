@@ -7,10 +7,12 @@ class ReviewsController < ApplicationController
 
     def new
         @review = Review.new()
+     
     end 
 
     def create
         @review = Review.create(strong_params)
+      
         redirect_to review_path(@review) 
     end 
 
