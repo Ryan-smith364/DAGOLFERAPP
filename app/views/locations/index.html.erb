@@ -1,0 +1,8 @@
+<h1> State Index</h1>
+
+<ul>
+    <% @locations.each do |location|%>
+        <li><%= link_to location.name, location_path(location)%> <%= location.courses.length%> courses</li>
+    <%end%>
+
+</ul>

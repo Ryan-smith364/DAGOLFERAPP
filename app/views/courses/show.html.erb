@@ -1,7 +1,8 @@
 <h1> <%= @course.name%></h1>
 
 <h3>Par: <%= @course.par%></h3>
-<pre>Description: <%= @course.description%> </pre><br>
+<h5> Description: </h5>
+<p><%= @course.description%> </p><br>
 
 <h3> Reviews:</h3>
 
@@ -17,4 +18,5 @@
             Thoughts: <%= review.review_text%><br><br>
         <%end%><br>
     </div>
-  <%= link_to "Course List", courses_path%>
+<%= link_to "#{@course.location.name} Courses" , location_path(@course.location)%><br>
+<%= link_to "Course List", courses_path%>
