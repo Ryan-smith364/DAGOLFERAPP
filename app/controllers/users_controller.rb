@@ -32,7 +32,6 @@ class UsersController < ApplicationController
         @user.reviews.destroy_all
         @user.delete
         session.clear  
-        # redirect_to users_path
         redirect_to login_path
     end
 
