@@ -15,18 +15,12 @@ fl = Location.create(name: "Flordia")
 ga = Location.create(name: "Georgia")
 md = Location.create(name: "Maryland")
 me = Location.create(name: " Maine")
-# fl = Location.create(name: "Flordia")
-# ga = Location.create(name: "Georgia")
-# md = Location.create(name: "Maryland")
-# me = Location.create(name: " Maine")
-# fl = Location.create(name: "Flordia")
-# ga = Location.create(name: "Georgia")
-# md = Location.create(name: "Maryland")
-# me = Location.create(name: " Maine")
-# fl = Location.create(name: "Flordia")
-# ga = Location.create(name: "Georgia")
-# md = Location.create(name: "Maryland")
-# me = Location.create(name: " Maine")
+sc = Location.create(name: "South Carolina")
+nc = Location.create(name: "North Carolina")
+va = Location.create(name: "Virginia")
+ma = Location.create(name: " Massachusetts")
+nh = Location.create(name: "New Hampshire")
+nj = Location.create(name: "New Jersey")
 
 # fl
 
@@ -83,8 +77,8 @@ grand slam golf experience. Your day begins with a series of three parkland hole
 Holes #4 and #5 transport you “across the pond” for a taste of The Open Championship. The next three holes bring you back to America 
 for a tour of “Amen Corner”, possibly the most famous series of holes from The Masters Tournament. And the day is just beginning.")
     
-    location_list = [fl.id, ga.id, md.id, me.id]
-   10.times do
+    location_list = [fl.id, ga.id, md.id, me.id, sc.id, nc.id, va.id, ma.id, nh.id, nj.id]
+   50.times do
         Course.create(
             location_id: location_list.sample,
             par: rand(74..80),

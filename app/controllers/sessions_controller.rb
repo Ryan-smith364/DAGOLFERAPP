@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         if user 
             session["username"] = user.name 
             session["userid"] = user.id 
-            redirect_to locations_path
+            redirect_to home_path
         else 
             flash["error"] = "Incorrect username or password"
             # render :new

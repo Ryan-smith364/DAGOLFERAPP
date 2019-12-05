@@ -11,8 +11,15 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.create(strong_params)
-        redirect_to user_path(@user)
+        if @user.valid?
+            @user = User.create(strong_params)
+            redirect_to home_pathuser 
+            session["username"] = user.name 
+            session["userid"] = user.id 
+        else
+            render :new
+        end
+               
     end
 
     def edit

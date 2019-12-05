@@ -1,5 +1,5 @@
 <h1> <%= @course.name%></h1>
-<h2> <%= @course.location.name%>
+<h2> <%=link_to @course.location.name, location_path(@course.location)%>
 <h3>Par: <%= @course.par%></h3>
 <h5> Description: </h5>
 <p><%= @course.description%> </p><br>

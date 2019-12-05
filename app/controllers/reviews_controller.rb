@@ -2,27 +2,31 @@ class ReviewsController < ApplicationController
  
     before_action :get_review ,only:[:show, :destroy, :edit, :update]
 
-    def show
-    end 
+   
 
     def new
         @review = Review.new()
      
     end 
+    def create
+      
+        @review = Review.create(strong_params)
+         # redirect_to review_path(@review) 
+        redirect_to course_path(@review.course)
+    end 
 
     def edit
-
+        @course = @review.course
     end
 
     def update
+      
         @review.update(strong_params)
         redirect_to users_path(@review.user)
     end
 
-    def create
-        @review = Review.create(strong_params)
-        # redirect_to review_path(@review) 
-        redirect_to course_path(@review.course)
+  
+    def show
     end 
 
     def destroy

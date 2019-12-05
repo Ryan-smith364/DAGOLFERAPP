@@ -13,7 +13,7 @@
         Thoughts: <%= review.review_text%><br><br>
         
         <%if session["userid"] == @user.id%> 
-            <%= button_to "Edit", edit_review_path%>
+            <%= button_to "Edit", edit_review_path(review), method: :get%>
             <%= button_to "delete", review_path(review), method: :delete%>
         <%end%>
 
