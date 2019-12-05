@@ -40,3 +40,17 @@ html {
       justify-content: center;
     }
 
+    a {
+      color: #5c8a36;
+      text-decoration: none;
+    }
+    
+    a:hover {
+      text-decoration: underline;
+      color: #142c01;
+    }
+    
+    .home_links:hover,
+    .home_links:focus {
+      color: #5c8a36;
+    }
