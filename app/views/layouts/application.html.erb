@@ -14,6 +14,12 @@
    <% if session["username"] %>
    <span> Welcome to the Golf App <%= session["username"] %> </span><br>
    <span><%= link_to "Logout", logout_path , method: "delete" %></span>
+      <div>
+        <%= link_to "Find Golfer", users_path%>
+        <%= link_to "Search By Course", courses_path%>
+        <%= link_to "Search By State", locations_path%>
+        <%= link_to "Profile", user_path(session["userid"])%>
+      </div>
    <% else %>
    <%= link_to "Login" , login_path %>
    <% end %>

@@ -26,10 +26,10 @@ html {
     padding: 3rem; 
     background-color: rgb(238, 236, 236);}
 
-    // * { 
-    //   background-color: lightgrey;
-    //   width: 300px;
-    //   border: 15px solid green;
-    //   padding: 50px;
-    //   margin: 20px;
-    // }
+    a { 
+      background-color: lightgrey;
+      
+      box-sizing: content-box;
+      outline-style: ridge;
+      margin: 5px;
+    }
