@@ -7,6 +7,17 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+            <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/icon-font.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+        
+        <title> Golf application | Coure List </title>
   </head>
 
   <body>
@@ -18,7 +29,7 @@
         <%= link_to "Find Golfer", users_path%>
         <%= link_to "Search By Course", courses_path%>
         <%= link_to "Search By State", locations_path%>
-        <%= link_to "Profile", user_path(session["userid"])%>
+        <%= link_to "Profile", user_path(session["userid"]) %>
       </div>
    <% else %>
    <%= link_to "Login" , login_path %>

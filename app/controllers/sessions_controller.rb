@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     def create
         username = params[:name]
         user = User.find_by(name:username)
+        
         if user 
             session["username"] = user.name 
             session["userid"] = user.id 

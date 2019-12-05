@@ -11,13 +11,17 @@ class UsersController < ApplicationController
     end
 
     def create
+
         @user = User.create(strong_params)
+       
+
         if @user.valid?
-           
+            session["username"] = @user.name 
+            session["userid"] = @user.id 
             redirect_to courses_path
-        
         else
             render :new
+             
         end
                
     end
