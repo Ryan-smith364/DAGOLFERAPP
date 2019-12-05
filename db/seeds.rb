@@ -11,7 +11,7 @@ User.destroy_all
 Review.destroy_all
 Location.destroy_all
 
-fl = Location.create(name: "Flordia")
+fl = Location.create(name: "Florida")
 ga = Location.create(name: "Georgia")
 md = Location.create(name: "Maryland")
 me = Location.create(name: " Maine")
