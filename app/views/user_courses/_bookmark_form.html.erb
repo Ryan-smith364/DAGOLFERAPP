@@ -2,7 +2,7 @@
 
 <%= form_for @user_course do |r|%>
 
-<%= r.hidden_field :user_id, value: @user.id%>
+<%= r.hidden_field :user_id, value: session["userid"]%>
 <%= r.hidden_field :course_id, value: @course.id%>
 
 <%= r.submit "Bookmark" %>

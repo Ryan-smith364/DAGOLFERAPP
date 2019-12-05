@@ -1,3 +1,9 @@
+
+
+    <%= link_to "Find Golfer", users_path%>
+    <%= link_to "Search By Course", courses_path%>
+    <%= link_to "Search By State", locations_path%>
+
 <h1> <%= @course.name%></h1>
 <h2> <%=link_to @course.location.name, location_path(@course.location)%>
 <h3>Par: <%= @course.par%></h3>
@@ -10,7 +16,10 @@
         <% if @course.reviews == []%>
             <%= "No Reviews Found" %><br>
         <%end%>
-    
+        
+         
+
+
         <% @course.reviews.each do |review|%>
         
             User: <%=link_to review.user.name, user_path(review.user)%><br>
@@ -19,8 +28,10 @@
         <%end%><br>
     </div>
 
- <%= render partial: "reviews/review_form" %> 
+        
 
+        <%= render partial: "reviews/review_form" %> 
+    <%= render partial: "user_courses/bookmark_form" %> 
 
 <%= link_to "#{@course.location.name} Courses" , location_path(@course.location)%><br>
 <%= link_to "Course List", courses_path%>

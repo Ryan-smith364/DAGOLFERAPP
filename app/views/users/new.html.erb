@@ -1,3 +1,12 @@
+
+    <%= link_to "Find Golfer", users_path%>
+    <%= link_to "Search By Course", courses_path%>
+    <%= link_to "Search By State", locations_path%>
+    
 <h1> Create a New User </h1>
+ 
+ <%if @user.errors%>
+    <%= render partial: "shared/error_form", locals: {instance: @user }%>
+<%end%>
 
 <%= render partial: "user_form"%>

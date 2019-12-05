@@ -1,4 +1,8 @@
-<h1> See Details  for <%= @user.name %> | <%= @user.handicap %> </h1> 
+
+    <%= link_to "Find Golfer", users_path%>
+    <%= link_to "Search By Course", courses_path%>
+    <%= link_to "Search By State", locations_path%>
+    <h1> See Details  for <%= @user.name %> | <%= @user.handicap %> </h1> 
 
 <h3> Reviews: </h3>
 
@@ -24,13 +28,12 @@
     <ul>
         <% @user.user_courses.each do |user_course|%>
         
-            <li> <%= user_course.course.name%><br></li>
+            <li> <%=link_to user_course.course.name, course_path(user_course.course)%><%= button_to "Remove", user_course_path(user_course), method: :delete%><br></li>
            
         <%end%><br>
     </ul>
 
-    <%= link_to "Users Index", users_path%>
-    <%= link_to "Edit", edit_user_path(@user)%>
-    <%if session["userid"] == @user.id%> 
+     <%if session["userid"] == @user.id%> 
+        <%= link_to "Edit", edit_user_path(@user)%>
         <%= button_to "Delete User", user_path(@user), method: :delete%>
     <%end%>

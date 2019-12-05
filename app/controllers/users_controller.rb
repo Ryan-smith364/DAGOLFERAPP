@@ -11,11 +11,11 @@ class UsersController < ApplicationController
     end
 
     def create
+        @user = User.create(strong_params)
         if @user.valid?
-            @user = User.create(strong_params)
-            redirect_to home_pathuser 
-            session["username"] = user.name 
-            session["userid"] = user.id 
+           
+            redirect_to courses_path
+        
         else
             render :new
         end
@@ -36,6 +36,7 @@ class UsersController < ApplicationController
     end 
     
     def destroy
+        @user.user_courses.destroy_all
         @user.reviews.destroy_all
         @user.delete
         session.clear  

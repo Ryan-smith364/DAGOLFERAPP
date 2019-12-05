@@ -5,14 +5,20 @@ class ReviewsController < ApplicationController
    
 
     def new
-        @review = Review.new()
-     
+        @course = Course.where(:id => params[:course_id])
+        @review = Review.new(course_id: params[@course])
+        
     end 
+
     def create
-      
+     
         @review = Review.create(strong_params)
-         # redirect_to review_path(@review) 
-        redirect_to course_path(@review.course)
+
+        if @review.valid?
+            redirect_to course_path(@review.course)
+        else
+            render :new
+        end
     end 
 
     def edit
@@ -20,13 +26,18 @@ class ReviewsController < ApplicationController
     end
 
     def update
-      
+        @course = @review.course
         @review.update(strong_params)
-        redirect_to users_path(@review.user)
+        if @review.valid?
+            redirect_to users_path(@review.user)
+        else
+            render :edit
+        end
     end
 
   
     def show
+
     end 
 
     def destroy
