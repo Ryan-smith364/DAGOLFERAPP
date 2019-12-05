@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
    
 
     def new
-        @course = Course.where(:id => params[:course_id])
+        # @course = Course.where(:id => params[:course_id])
         @review = Review.new(course_id: params[@course])
         
     end 

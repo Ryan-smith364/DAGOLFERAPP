@@ -22,7 +22,7 @@
         <%end%>
 
     <%end%><br>
-
+<%if session["userid"] == @user.id%> 
 <h3> Bookmarked Courses:</h3>
 
     <ul>
@@ -33,7 +33,7 @@
         <%end%><br>
     </ul>
 
-     <%if session["userid"] == @user.id%> 
+     
         <%= link_to "Edit", edit_user_path(@user)%>
         <%= button_to "Delete User", user_path(@user), method: :delete%>
     <%end%>
