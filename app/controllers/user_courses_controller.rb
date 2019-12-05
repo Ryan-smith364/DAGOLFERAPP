@@ -15,10 +15,12 @@ class UserCoursesController < ApplicationController
         @user_course.delete
         redirect_to user_path(path)
     end
+
     private
 
 
     def strong_params
         params.require(:user_course).permit(:user_id,:course_id) 
      end 
+     
 end
