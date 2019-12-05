@@ -1,4 +1,6 @@
-
+<%if @review.errors%>
+    <%= render partial: "shared/error_form", locals: {instance: @review }%>
+<%end%>
 
 <%= form_for @review do |r|%>
 

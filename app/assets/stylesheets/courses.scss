@@ -12,10 +12,9 @@ p{
 
 
 html {
-    font-size: 70%; }
-  
-  body {
-    box-sizing: border-box; }
+    font-size: 70%; 
+    
+  }
   
   body {
     font-family: "Lato", sans-serif;
@@ -26,39 +25,32 @@ html {
     padding: 3rem; 
     background-color: rgb(238, 236, 236);}
 
-    a { 
-      background-color: lightgrey;
-      
+      div.button{
+      background-color: pink;
       box-sizing: content-box;
       outline-style: ridge;
       margin: 5px;
+      display:inline-block;
+      align-content: center;
+     
+    }
+    div.header{
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    * { 
-      margin:0;
-      padding:0;
-      box-sizing: border-box;
-  
-  }
-  
-  body {
-       font-family:"Lato" , sans-serif ;
-       font-weight: 400 ;
-       font-size: 16px ;
-       line-height: 1.7 ;
-       color: #777;
-       padding: 30px 
-  }
-  
-  .header {
-      height: 95vh ; 
-      background-image: linear-gradient(
-          to right bottom ,
-           rgba(126,213,111,0.8),
-           rgba(40,180,131,0.8) ),
-           url(../img/golf2.jpeg);
-      background-size: cover ;
-      background-position: top;
-  
-      /* clip-path: polygon(0 0 , 100% 0 , 100% 200px , 0 100%); */
-  }
+    a {
+      color: #5c8a36;
+      text-decoration: none;
+    }
+    
+    a:hover {
+      text-decoration: underline;
+      color: #142c01;
+    }
+    
+    .home_links:hover,
+    .home_links:focus {
+      color: #5c8a36;
+    }

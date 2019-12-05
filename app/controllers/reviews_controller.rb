@@ -36,7 +36,7 @@ class ReviewsController < ApplicationController
         @course = @review.course
         @review.update(strong_params)
         if @review.valid?
-            redirect_to users_path(@review.user)
+            redirect_to user_path(@review.user)
         else
             render :edit
         end
