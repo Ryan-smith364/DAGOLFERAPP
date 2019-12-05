@@ -13,12 +13,19 @@ class ReviewsController < ApplicationController
     def create
      
         @review = Review.create(strong_params)
+         
 
+    
         if @review.valid?
             redirect_to course_path(@review.course)
         else
-            render :new
+            flash[:review_errors] = @review.errors.full_messages
+            redirect_to course_path(@review.course)
         end
+
+
+
+
     end 
 
     def edit
