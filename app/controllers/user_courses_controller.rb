@@ -1,4 +1,7 @@
 class UserCoursesController < ApplicationController
+   
+    before_action  :authorized , except: [:home]
+
     def new
         @user_course = UserCourse.new
     end

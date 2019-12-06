@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
         username = params[:name]
         user = User.find_by(name:username)
         
-        if user 
+        if user && user.authenticate(params[:password])
             session["username"] = user.name 
             session["userid"] = user.id 
             redirect_to courses_path
@@ -23,6 +23,11 @@ class SessionsController < ApplicationController
         session.clear   
         redirect_to login_path
     end 
+
+    private
+
+   
+  
 
 
 end

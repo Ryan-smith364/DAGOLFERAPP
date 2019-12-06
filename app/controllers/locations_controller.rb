@@ -1,4 +1,6 @@
 class LocationsController < ApplicationController
+
+    before_action  :authorized , except: [:home]
    
     def home
     end 

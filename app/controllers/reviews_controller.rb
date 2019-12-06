@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
  
     before_action :get_review ,only:[:show, :destroy, :edit, :update]
 
+  
    
 
     def new

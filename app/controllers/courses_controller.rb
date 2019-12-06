@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
     
+    # before_action  :authorized , except: [:home]
 
     def index
         @courses = Course.all
