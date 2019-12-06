@@ -1,3 +1,10 @@
+
+
+
+<body>
+
+<header class = "header"></header>
+
 <h1> Login to DagolfaApp</h1> 
 
 <% if flash["error"] %>
@@ -14,3 +21,7 @@
 <% end %> 
 
 <br><%= button_to "Create User", new_user_path, method: :get%>
+
+<h3> Visitors :  <%= link_to "Full List of all Courses" , locations_path %> </h3>  
+
+</body>
