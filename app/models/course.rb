@@ -18,4 +18,17 @@ class Course < ApplicationRecord
             Course.all
         end
     end
+
+    def average_rating
+        average = 0
+        total = 0
+            self.reviews.each do |review|
+                    total = review.rating + total
+            end
+            
+            average = total.to_f / self.reviews.length
+            agerage = sprintf('%.2f', average)
+            
+    end
+
 end

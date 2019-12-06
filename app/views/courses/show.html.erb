@@ -1,14 +1,19 @@
+<html>
+<div class="bookmark"><%= render partial: "user_courses/bookmark_form" %>  </div>
+<div class="head">
+    <h1> <%= @course.name%></h1>
+    <h2> <%=link_to @course.location.name, location_path(@course.location)%>
+    <h3>Par: <%= @course.par%></h3>
+</div>
 
-
-<h1> <%= @course.name%></h1>
-<h2> <%=link_to @course.location.name, location_path(@course.location)%>
-<h3>Par: <%= @course.par%></h3>
-<h5> Description: </h5>
+<h3> Description: </h5>
 <p><%= @course.description%> </p><br>
 
-<h3> Reviews:</h3>
+<h3>Average Rating: <%=@course.average_rating%> </h3>
 
-    <div>
+<div class="reviewform"><h3> Reviews:</h3></div>
+
+    <div class="reviews">
         <% if @course.reviews == []%>
             <%= "No Reviews Found" %><br>
         <%end%>
@@ -26,8 +31,9 @@
 
         
 
-    <%= render partial: "reviews/review_form" %> 
-    <%= render partial: "user_courses/bookmark_form" %> 
+    <div class="reviewform"><%= render partial: "reviews/review_form" %> </div>
+    
 
-<%= link_to "#{@course.location.name} Courses" , location_path(@course.location)%><br>
-<%= link_to "Course List", courses_path%>
+<div class="foot"><%= link_to "#{@course.location.name} Courses" , location_path(@course.location)%><br></div>
+<div class="foot"><%= link_to "Course List", courses_path%></div>
+</html>

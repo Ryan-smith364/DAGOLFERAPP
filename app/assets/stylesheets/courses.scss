@@ -11,33 +11,43 @@ p{
     margin-right: 2%;
     margin-left: 2%;
     word-wrap: break-word;  
+    
 }
 
 
 html {
-    font-size: 70%; 
+    font-size: 85%; 
     
   }
   
   body {
+    padding: 0px;
     font-family: "Lato", sans-serif;
     font-weight: 400;
     /*font-size: 16px;*/
     line-height: 1.7;
     color: rgb(70, 125, 245);
-    padding: 3rem; 
-    background-color: rgb(238, 236, 236);}
+    background-color: rgb(238, 236, 236);
+  }
 
-      div.button{
+      div.change{
       background-color: pink;
-      box-sizing: content-box;
+      
       outline-style: ridge;
+      outline-width: thick;
       margin: 5px;
       display:inline-block;
       align-content: center;
+    
+      border: none;
+      padding: .1px .1px;
+      display: inline-block;
+      font-size: 4 px;
+      margin: 6px 10px;
+      cursor: pointer;
      
     }
-    div.header{
+    .header{
       display: flex;
       align-items: center;
       justify-content: center;
@@ -58,4 +68,57 @@ html {
       color: #5c8a36;
     }
 
+    .logout{
+      background-color: pink;
+      box-sizing: content-box;
+      outline-style: ridge;
+      outline-width: medium;
+      margin: 5px;
+      display:inline-block;
     
+      
+    }
+    .logout:hover {
+      background-color: rgb(255, 123, 244);
+      color: rgb(54, 54, 243);
+    }
+
+    .change:hover {
+      background-color: rgb(255, 123, 244);
+      color: rgb(54, 54, 243);
+    }
+    
+    .title {
+      font-size: xx-large;
+      text-align: center;
+      margin: 0px 0px;
+    }
+
+    hr{
+      background-color: rgb(54, 54, 243);
+      height: 3px;
+    }
+
+    .reviewform {
+      margin: 0% 5%;
+    }
+
+
+      .reviews{
+        margin: 0% 15%;
+
+      }
+
+      .head {
+        text-align: center;
+      }
+
+      .bookmark {
+        text-align: right;
+        margin: 0px 50px;
+      }
+
+      .foot {
+        margin: 10px;
+      }
+

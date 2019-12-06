@@ -1,12 +1,14 @@
 
-    <h1> See Details  for <%= @user.name %> | <%= @user.handicap %> </h1> 
+    <h1> See Details  for <%= @user.name %> | Handicap: <%= @user.handicap %> </h1> 
 
-<h3> Reviews: </h3>
+<h5> Average Ratings: <%= @user.average_rating%>
+<div class="reviewform"><h3> Reviews: </h3><div>
+
 
     <% if @user.reviews == []%>
         <%= "No Reviews Found" %>
     <%end%>
-
+<div class= reviews>
     <% @user.reviews.each do |review|%>
        
         Course: <%=link_to review.course.name, course_path(review.course)%><br>
@@ -17,7 +19,7 @@
             <%= button_to "Edit", edit_review_path(review), method: :get%>
             <%= button_to "delete", review_path(review), method: :delete%>
         <%end%>
-
+</div>
     <%end%><br>
 <%if session["userid"] == @user.id%> 
 <h3> Bookmarked Courses:</h3>
@@ -31,6 +33,6 @@
     </ul>
 
      
-        <%= link_to "Edit", edit_user_path(@user)%>
+        <div class="foot"> <%= link_to "Edit", edit_user_path(@user)%> </div>
         <%= button_to "Delete User", user_path(@user), method: :delete%>
     <%end%>
