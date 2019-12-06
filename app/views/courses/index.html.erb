@@ -2,6 +2,13 @@
 
 <h1> Course Index</h1>
 
+
+
+  <%= form_tag(courses_path, method: :get) do %>
+    <%= text_field_tag(:search, params[:search]) %>
+    <%= submit_tag ("Search") %>
+  <% end %>
+
 <ul>
     <% @courses.each do |course|%>
         <li><%= link_to course.name, course_path(course)%>,  <%=link_to course.location.name, location_path(course.location)%></li>

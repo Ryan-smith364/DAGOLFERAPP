@@ -2,7 +2,9 @@ class CoursesController < ApplicationController
     
 
     def index
+        
         @courses = Course.all
+        @courses = Course.search(params[:search])
     end
 
     def show
@@ -12,5 +14,9 @@ class CoursesController < ApplicationController
         # @user_course = UserCourse.new()
     end
 
-    
+    private
+
+    def course_params
+      params.require(:course).permit(:name, :desc, :location_id, :par, :search)
+    end
 end

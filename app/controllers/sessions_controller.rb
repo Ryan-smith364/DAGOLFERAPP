@@ -5,16 +5,15 @@ class SessionsController < ApplicationController
     end 
 
     def create
-        username = params[:name]
-        user = User.find_by(name:username)
+        username = params[:username]
+        user = User.find_by(username:username)
         
         if user 
             session["username"] = user.name 
             session["userid"] = user.id 
             redirect_to courses_path
         else 
-            flash["error"] = "Incorrect username or password"
-            # render :new
+            flash["error"] = "Incorrect username"
             redirect_to login_path
         end 
     end 
