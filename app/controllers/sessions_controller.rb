@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
             session["userid"] = user.id 
             redirect_to courses_path
         else 
-            flash["error"] = "Incorrect username"
+            flash["error"] = "Incorrect username or Password"
             redirect_to login_path
         end 
     end 

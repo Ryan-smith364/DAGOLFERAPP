@@ -29,7 +29,11 @@ class UsersController < ApplicationController
 
     def update
         @user.update(strong_params)
-        redirect_to user_path(@user)
+        if @user.valid?
+            redirect_to user_path(@user)
+        else
+            render :edit
+        end
     end
 
     def show
