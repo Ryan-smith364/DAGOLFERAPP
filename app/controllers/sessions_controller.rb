@@ -11,11 +11,16 @@ class SessionsController < ApplicationController
         if user && user.authenticate(params[:password])
             session["username"] = user.name 
             session["userid"] = user.id 
-            redirect_to courses_path
+            # redirect_to courses_path
+            redirect_to about_path
         else 
             flash["error"] = "Incorrect username or Password"
             redirect_to login_path
         end 
+    end 
+
+    def about
+       
     end 
 
     def logout
