@@ -2,6 +2,7 @@ class UsersController < ApplicationController
    
     before_action :get_user ,only:[:show, :edit, :update, :destroy]
 
+
     def index
         @users = User.all
     end
@@ -11,20 +12,16 @@ class UsersController < ApplicationController
     end
 
     def create
-
         @user = User.create(strong_params)
-       
-
         if @user.valid?
             session["username"] = @user.name 
             session["userid"] = @user.id 
             redirect_to courses_path
         else
-            render :new
-             
-        end
-               
+            render :new          
+        end             
     end
+
 
     def edit
 
@@ -55,7 +52,8 @@ class UsersController < ApplicationController
      end 
 
      def strong_params
-        params.require(:user).permit(:name,:handicap, :username) 
+        params.require(:user).permit(:name,:handicap, :username, :password) 
+
      end 
     
 

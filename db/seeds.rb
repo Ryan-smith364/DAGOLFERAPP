@@ -91,13 +91,13 @@ for a tour of “Amen Corner”, possibly the most famous series of holes from T
     
     
     
-user1 = User.create(name: 'Joe', handicap: 12)
-user2 = User.create(name: 'Rebecca', handicap: 23)
-user3 = User.create(name: 'Steven', handicap: 32)
-user4 = User.create(name: 'Gary', handicap: 35)
-user5 = User.create(name: 'Karen', handicap: 7)
-user6 = User.create(name: 'Frank', handicap: 56)
-user7 = User.create(name: 'Tiger', handicap: 0)
+user1 = User.create(name: 'Joe', handicap: 12 , password: "password" )
+user2 = User.create(name: 'Rebecca', handicap: 23, password: "password" )
+user3 = User.create(name: 'Steven', handicap: 32 , password: "password" )
+user4 = User.create(name: 'Gary', handicap: 35 , password: "password" )
+user5 = User.create(name: 'Karen', handicap: 7 , password: "password" )
+user6 = User.create(name: 'Frank', handicap: 56 , password: "password" )
+user7 = User.create(name: 'Tiger', handicap: 0 , password: "password" )
 
 Review.create(user: user2, course: course4, review_text: " Perfect course and, good service ", rating: 5)
 Review.create(user: user1, course: course1, review_text: " Could be better ", rating: 2)
