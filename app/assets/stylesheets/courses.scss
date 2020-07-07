@@ -26,9 +26,10 @@ html {
     font-weight: 400;
     /*font-size: 16px;*/
     line-height: 1.7;
-    color: rgb(70, 125, 245);
-    background-color: rgb(238, 236, 236);
-  }
+    color: yellow;
+    // background-color: rgb(238, 236, 236);
+
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);  }
 
       div.change{
       background-color: pink;
@@ -54,13 +55,13 @@ html {
     }
 
     a {
-      color: #5c8a36;
+      color: yellowgreen;
       text-decoration: none;
     }
     
     a:hover {
       text-decoration: underline;
-      color: #142c01;
+      color: goldenrod;
     }
     
     .home_links:hover,
@@ -80,12 +81,12 @@ html {
     }
     .logout:hover {
       background-color: rgb(255, 123, 244);
-      color: rgb(54, 54, 243);
+      color:goldenrod;
     }
 
     .change:hover {
       background-color: rgb(255, 123, 244);
-      color: rgb(54, 54, 243);
+      color: goldenrod;
     }
     
     .title {
@@ -95,7 +96,7 @@ html {
     }
 
     hr{
-      background-color: rgb(54, 54, 243);
+      background-color: goldenrod;
       height: 3px;
     }
 

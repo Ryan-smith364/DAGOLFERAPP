@@ -16,7 +16,7 @@ class UsersController < ApplicationController
         if @user.valid?
             session["username"] = @user.name 
             session["userid"] = @user.id 
-            redirect_to courses_path
+            redirect_to about_path
         else
             render :new          
         end             
